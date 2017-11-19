@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 import httplib2
 import json
+import os
 
 def getGeocodeLocation(inputString):
     # Use Google Maps to convert a location into Latitute/Longitute coordinates
     # FORMAT: https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=API_KEY
-    google_api_key = "google_map_api_key_here"
+    google_api_key = os.environ.get('GOOGLE_MAP_API_KEY')
     locationString = inputString.replace(" ", "+")
     url = ('https://maps.googleapis.com/maps/api/geocode/json?address=%s&key=%s'% (locationString, google_api_key))
     h = httplib2.Http()
