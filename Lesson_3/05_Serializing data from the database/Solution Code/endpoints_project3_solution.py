@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import Base, Puppy
-
+#flask version >= 0.10
 
 engine = create_engine('sqlite:///puppies.db')
 Base.metadata.bind = engine
