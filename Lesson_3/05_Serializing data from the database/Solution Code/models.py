@@ -14,12 +14,12 @@ class Puppy(Base):
 
     @property
     def serialize(self):
-       """Return object data in easily serializeable format"""
-       return {
-       		'id': self.id,
-           'name': self.name,
-           'description' : self.description
-       }
+        """Return object data in easily serializeable format"""
+        return {
+                    "id": self.id,
+                   "name": self.name,
+                   "description" : self.description
+               }
  
 
 

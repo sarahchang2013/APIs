@@ -58,7 +58,7 @@ def getAllPuppies():
 
 def getPuppy(id):
   puppy = session.query(Puppy).filter_by(id = id).one()
-  return jsonify(puppy=puppy.serialize) 
+  return jsonify(puppy=puppy.serialize)
   
 def makeANewPuppy(name,description):
   puppy = Puppy(name = name, description = description)
@@ -84,5 +84,5 @@ def deletePuppy(id):
 
 
 if __name__ == '__main__':
-    app.debug = False
+    app.debug = True
     app.run(host='0.0.0.0', port=5000)	
